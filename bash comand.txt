@@ -1,0 +1,1 @@
+java -Xms2G -Xmx2G  -jar ./PaDEL-Descriptor/PaDEL-Descriptor.jar -removesalt -standardizenitro -fingerprints -descriptortypes ./PaDEL-Descriptor/MACCSFingerprinter.xml -dir ./smiles.smi -file descriptors_output.csv
