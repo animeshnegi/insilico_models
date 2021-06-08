@@ -1,0 +1,158 @@
+
+
+{% extends "layout.html" %}
+{% block body %}
+
+
+
+
+<!-- fatty acid synthase model  -->
+
+
+<div class="jumbotron" style="position: relative;">
+
+    <h1 class="display-1" style="text-align: center; text-decoration: none; margin-top: 5rem;">Calculate Descriptor</h1>
+  
+    <p class="mb-0 text-white-50">A descriptor is in chemical nomenclature a prefix placed before the systematic substance name, 
+      which describes the configuration or the stereochemistry of the molecule.  
+      The descriptors, usually placed at the beginning of the systematic name, 
+      are not taken into account in the alphabetical sorting.</p>
+
+
+
+  </div>
+    <!-- this the code when the file is not in .csv format  -->
+    {%- if error == 404 -%}
+    <div class="alert alert-danger alert-dismissible fade show" style="margin-left: 5rem; margin-right: 5rem; text-align:center;" role="alert">
+      <strong>ERROR </strong> PLEASE SELECT __.smi__ OR __.txt__ FILE  
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endif %}
+
+     <!-- this the code when the file is uploaded  -->   
+    {%- if error == 111 -%}
+    <div class="alert alert-primary alert-dismissible fade show" style="margin-left: 5rem; margin-right: 5rem; text-align:center;" role="alert">
+      <strong>SUCCESS </strong> File uploaded succesfully 
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endif %}
+  
+  
+  
+  <!-- this the code of empty file code  -->
+  {%- if value == 3 -%}
+  <div class="alert alert-danger alert-dismissible fade show" style="margin-left: 5rem; margin-right: 5rem; text-align: center;" role="alert">
+    <strong>ERROR </strong> No file was selected 
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {% endif %}
+
+  </div>
+
+  
+  
+
+<!-- JUMBOTRON FOR MODEL  -->
+
+<div class="container"> 
+  
+    <div class="jumbotron" style="position: relative;">
+      <h2 class="mb-0 text-white-50" >Please upload the file in .smi or .txt format</h2>
+  
+      <form action="/des_cal" method="POST" enctype="multipart/form-data">
+
+        <label for="exampleFormControlFile1" style="color: white;"><a href="https://en.wikipedia.org/wiki/Simplified_molecular-input_line-entry_system#Conversion">SMILES</a> should be 
+            canonical</label>
+        <input style="height: 2rem; width: 45vmax ; color: white;  background-color: #d49292; " type="file" class="form-control-file" name="des_fil">
+
+
+        <label class="switch mt-4 mb-4">
+          <input type="checkbox" name="check1">
+          <span class="slider round"> <label style="margin-top: 5px; margin-left: 7rem; width: 20rem; color: white;">Remove salt</label></span>
+        </label>
+  
+        <br>
+
+
+        <label class="switch mb-4">
+          <input type="checkbox" name="check2" >
+          <span class="slider round"> <label style="margin-top: 5px; margin-left: 7rem; width: 20rem; color: white;">Standardize nitro</label></span>
+        </label>
+    
+        <br>
+
+
+            <label for="exampleFormControlFile1" style="color: white;">Select Descriptor</label>
+              <select name="desc" class="form-control mt-0" style="color:rgb(0, 0, 0); width: 45vmax ;" placeholder="AtomPairs2D">
+                <option value="2D">1D and 2D</option>
+                <option value="3D">3D</option>
+                <option value="both">Both</option>
+                <option value="no">None</option>
+                </select>
+
+
+        <label for="exampleFormControlFile1" style="margin-top: 1rem ; color: white;">Select Fingerprint</label>
+          <select name="fingerprint" class="form-control mt-0" style="color:rgb(0, 0, 0); width: 45vmax ;" placeholder="AtomPairs2D">
+            
+            <option value="AtomPairs2DFingerprinter">AtomPairs2D</option>
+            <option value="AtomPairs2DFingerprintCount">AtomPairs2DCount</option>
+            <option value="Fingerprinter">CDK</option>
+            <option value="ExtendedFingerprinter">CDKextended</option>
+            <option value="GraphOnlyFingerprinter">CDKgraphonly</option>
+            <option value="EStateFingerprinter">EState</option>
+            <option value="KlekotaRothFingerprinter">KlekotaRoth</option>
+            <option value="KlekotaRothFingerprintCount">KlekotaRothCount</option>
+            <option value="MACCSFingerprinter">MACCS</option>
+            <option value="PubchemFingerprinter">PubChem</option>
+            <option value="SubstructureFingerprinter">Substructure</option>
+            <option value="SubstructureFingerprintCount">SubstructureCount</option>
+            <option value="no">None</option>
+            </select>
+
+
+
+
+
+        <button type="submit" class="btn btn-primary js-scroll-trigger mt-4">SUBMIT</button>
+      </form>
+  
+      <form>
+ 
+  
+        <!-- 
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 52%"></div>
+          </div> -->
+  
+  
+      </form>
+  
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+

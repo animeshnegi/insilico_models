@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content=""/>
+        <title>Insilico_Models</title>
+        <link rel="icon" type="image/x-icon" href="../static/img/icon.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{url_for('static', filename = 'css/styles.css')}}" rel="stylesheet" />
+
+
+  
+<style>
+
+input{
+
+    width: 100%;
+    max-width: 74vmax;
+    margin-top: 5vmin;
+    margin-left: 14vmax;
+    border-color: #ff00ff;
+    border-radius: 14px;
+    outline: none;
+    align-items:center;
+    height: 2.5rem;
+    padding-left: 13px;
+}
+
+.svg{
+    height: 30px;
+    z-index: 1;
+    margin-left: -50px;
+}
+
+s.svg:hover{
+    height: 35px;
+}
+
+.head{
+    width: 100%;
+    height: 5rem;
+    background-color: black;
+
+
+}
+</style>
+
+<script src="../static/js/auto-complete.js"></script>
+</head>
+</body>
+
+
+
+
+<body id="page-top"></body>
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="/index.html">HOME</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="var_models.html">Models</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="head"></div>
+
+
+
+
+<div style="text-align: center; margin-top: 80px;">
+<h1>Search Models</h1>
+<p>Just enter the name of receptor, protein and the name of model.</p>
+</div>
+
+<input  id="hero-demo" autofocus type="text" name="q" placeholder="Type the receptor name and model name...">
+<svg onclick="testJS()" class="svg" xmlns="http://www.w3.org/2000/svg"  version="1.1" viewBox="-1 0 139 139.7983">
+    <g id="surface1">
+    <path d="M 53.457031 18.234375 C 34.21875 18.234375 18.621094 33.832031 18.621094 53.074219 C 18.621094 72.3125 34.21875 87.910156 53.457031 87.910156 C 72.691406 87.910156 88.289062 72.3125 88.289062 53.074219 C 88.289062 53.074219 88.289062 53.066406 88.289062 53.0625 C 88.25 33.84375 72.675781 18.273438 53.457031 18.234375 Z M 53.457031 84.160156 C 36.28125 84.160156 22.355469 70.234375 22.355469 53.0625 C 22.355469 35.886719 36.28125 21.964844 53.457031 21.964844 C 70.628906 21.964844 84.554688 35.886719 84.554688 53.0625 C 84.519531 70.222656 70.613281 84.125 53.457031 84.160156 Z M 53.457031 84.160156 " style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" />
+    <path d="M 97.601562 82.351562 C 113.800781 57.953125 107.148438 25.046875 82.75 8.855469 C 58.355469 -7.34375 25.449219 -0.691406 9.253906 23.699219 C -6.945312 48.097656 -0.292969 81.007812 24.105469 97.203125 C 40.59375 108.148438 61.8125 109 79.132812 99.402344 L 115.8125 135.875 C 120.582031 140.910156 128.535156 141.128906 133.574219 136.355469 C 138.613281 131.585938 138.828125 123.636719 134.058594 118.59375 C 133.902344 118.429688 133.742188 118.265625 133.574219 118.109375 Z M 53.464844 102.292969 C 26.265625 102.304688 4.203125 80.253906 4.195312 53.046875 C 4.191406 25.847656 26.238281 3.789062 53.441406 3.777344 C 80.644531 3.773438 102.707031 25.820312 102.710938 53.023438 C 102.710938 53.039062 102.710938 53.046875 102.710938 53.0625 C 102.683594 80.253906 80.648438 102.292969 53.457031 102.316406 Z M 130.941406 133.207031 C 127.496094 136.632812 121.929688 136.632812 118.480469 133.207031 L 82.417969 97.410156 C 87.378906 94.160156 91.757812 90.105469 95.382812 85.417969 L 130.933594 120.753906 C 134.375 124.199219 134.375 129.785156 130.933594 133.230469 Z M 130.941406 133.207031 " style=" stroke:none;fill-rule:nonzero;fill:#ff00ff;fill-opacity:1;" />
+    </g>
+    </svg>
+
+<script>
+
+
+
+
+var demo1 = new autoComplete({
+    selector: '#hero-demo',
+    minChars: 1,
+    source: function (term, suggest) {
+        term = term.toLowerCase();
+
+        var choices = ['FAS_csv_SVM_Model__with kernal=poly_date=2021_06_05---08_12_55_PM.pkl', 'FAS_KNN_Model_with n_Neigb = 3_date=2021_06_05---12_31_50_PM.pkl', 'FAS_RF_Model_with n_Est=100_date=2021_06_05---12_11_24_PM.pkl', 'test.csv_KNN_Model_with n_Neigb = 0_date=2021_05_30---11_01_04_AM.pkl', 'test.csv_KNN_Model_with n_Neigb = 10_date=2021_05_30---11_01_04_AM.pkl', 'test.csv_KNN_Model_with n_Neigb = 7_date=2021_05_30---11_01_04_AM.pkl', 'test.csv_KNN_Model_with n_Neigb = _date=2021_05_30---10_50_34_AM.pkl', 'test.csv_KNN_Model_with n_Neigb = _date=2021_05_30---10_58_19_AM.pkl', 'test.csv_KNN_Model_with n_Neigb = _date=2021_05_30---11_01_04_AM.pkl', 'test.csv_RF_Model_with n_Est=100_date=2021_05_30---11_01_04_AM.pkl', 'test.csv_RF_Model_with n_Est=101_date=2021_05_30---11_01_04_AM.pkl', 'test.csv_RF_Model_with n_Est=105_date=2021_05_30---11_01_04_AM.pkl', 'test.csv_RF_Model_with n_Est=107_date=2021_05_30---11_01_04_AM.pkl', 'test.csv_RF_Model_with n_Est=109_date=2021_05_30---11_01_04_AM.pkl', 'test.csv_RF_Model_with n_Est=112_date=2021_05_30---11_01_04_AM.pkl', 'test.csv_RF_Model_with n_Est=455_date=2021_05_30---11_01_04_AM.pkl', 'test.csv_RF_Model_with n_Est=56_date=2021_05_30---11_01_04_AM.pkl', 'test.csv_RF_Model_with n_Est=_date=2021_05_30---10_46_46_AM.pkl', 'test.csv_SVM_Model_date=2021_05_27---01_01_12_PM.pkl', 'test.csv_SVM_Model_kernal=linear_date=2021_05_27---01_08_23_PM.pkl', 'test.csv_SVM_Model__.pkl', 'test.csv_SVM_Model__with kernal=rbf_date=2021_05_30---01_12_45_PM.pkl', 'test.csv___.pkl', 'train.csv_KNN_Model_with n_Neigb = 7_date=2021_05_30---11_01_04_AM.pkl', 'train.csv_KNN_Model_with n_Neigb = 8_date=2021_06_05---08_16_31_PM.pkl', 'train.csv_RF_Model_with n_Est=100_date=2021_05_30---01_15_39_PM.pkl', 'train.csv_RF_Model_with n_Est=150_date=2021_06_05---08_16_31_PM.pkl', 'train.csv_RF_Model_with n_Est=_date=2021_05_29---01_06_22_PM.pkl', 'train.csv_SVM_Model_kernal=linear_date=2021_05_27---01_08_23_PM.pkl', 'train.csv_SVM_Model__with kernal=linear_date=2021_06_05---08_16_31_PM.pkl', 'train.csv_SVM_Model__with kernal=linear_date=2021_06_05---11_51_50_AM.pkl', 'train.csv_SVM_Model__with kernal=linear_date=2021_06_05---11_51_53_AM.pkl', 'train.csv_SVM_Model__with kernal=linear_date=2021_06_05---11_55_54_AM.pkl', 'train.csv_SVM_Model__with kernal=rbf_date=2021_06_05---08_16_31_PM.pkl', 'train.csv_SVM_Model__with kernal=sigmoid_date=2021_06_05---08_16_31_PM.pkl'];
+          
+        var suggestions = [];
+        for (i = 0; i < choices.length; i++)
+            if (~choices[i].toLowerCase().indexOf(term)) suggestions.push(choices[i]);
+        suggest(suggestions);
+    }
+});
+
+
+  
+
+
+function testJS() {
+    var b = document.getElementById('hero-demo').value,
+        url = 'model.html/' + encodeURIComponent(b);
+
+    document.location.href = url;
+}
+
+</script>
+<footer style="position: absolute;bottom: 0; width: 100%;" class="footer bg-black small text-center text-white-50">
+    <div class="container">Copyright © <i>Insilico</i>models.com 2021</div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Third party plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<!-- Core theme JS-->
+<script src="../static/js/scripts.js"></script>
+</body>
+
+</html>

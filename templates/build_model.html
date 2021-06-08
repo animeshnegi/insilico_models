@@ -1,0 +1,71 @@
+
+{% extends "layout.html" %}
+{% block body %}
+
+
+
+
+<!-- heading -->
+
+
+
+<div class="jumbotron" style="position: relative;">
+
+    <h1 class="display-1" style="text-align: center; text-decoration: none; margin-top: 5rem;">Build your machine learning model</h1>
+
+</div>
+<div class="container1" style=" margin-top: -5rem;" >
+
+
+    <form action="/build_model.html" method="POST" enctype="multipart/form-data">
+
+
+
+      <label for="exampleFormControlFile1" style="display:block; text-align:center; margin-top: 7%; font-size: 2vmax; color: white;">Select a model</label>
+
+    <div style="display: flex; align-content: space-around; flex-wrap: wrap; justify-content: center;">
+
+        <div style="width: 18rem; margin-left: 2rem;  ">
+            <div class="card-body">
+                <div id="ck-button">
+                    <label>
+                       <input type="checkbox" name="check" onclick="onlyOne(this)" value="SVM"><span><h2><strong>SVM</strong></h2><p>Support vector machine</p></span>
+                    </label>
+                 </div>
+            </div>
+        </div>
+
+
+        <div style="width: 18rem; margin-left: 2rem;  ">
+            <div class="card-body">
+                <div id="ck-button">
+                    <label>
+                       <input type="checkbox" name="check" onclick="onlyOne(this)" value="RF"><span><h2><strong>RF</strong></h2><p>RandomForest</p></span>
+                    </label>
+                 </div>
+            </div>
+        </div>
+
+        <div style="width: 18rem; margin-left: 2rem;  ">
+            <div class="card-body">
+                <div id="ck-button">
+                    <label>
+                       <input type="checkbox" name="check" onclick="onlyOne(this)" value="KNN"><span><h2><strong>KNN</strong></h2><p> k-nearest neighbors</p></span>
+                    </label>
+                 </div>
+            </div>
+        </div>
+     </div>  
+    <button type="submit" class="btn btn-primary js-scroll-trigger mt-4" style="    display: table; margin: 0 auto">SUBMIT</button>
+    </form>
+</div>
+
+
+
+
+
+
+
+{% endblock %}
+
+

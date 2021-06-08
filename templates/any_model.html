@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Insilico_Models</title>
+    <link rel="icon" type="image/x-icon" href="../static/img/icon.png" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{{url_for('static', filename = 'css/styles.css')}}" rel="stylesheet" />
+
+    <style>
+        #data {
+            margin-top: 5rem;
+            border: 4px;
+            width: 40px;
+            height: 40px;
+        }
+
+        .box {
+            height: 30rem;
+            background-color: wheat;
+            padding-top: 5rem;
+            margin-bottom: 2rem;
+        }
+
+
+        .table {
+            width: 100%;
+            display: table-caption;
+            margin-bottom: 1rem;
+            color: #212529;
+            width: 80rem;
+            height: 20rem;
+            border: 1px dotted black;
+            overflow-x: scroll;
+            overflow-y: scroll;
+            align-content: center;
+            margin-left: 12%;
+
+        }
+    </style>
+
+
+
+</head>
+
+
+
+<body id="page-top"></body>
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="/index.html">HOME</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="var_models.html">Models</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="jumbotron" style="position: relative;">
+
+    <h1 class="display-1" style="text-align: center; text-decoration: none; margin-top: 5rem;">Results</h1>
+   
+
+
+</div>
+
+
+
+
+<div class="container" style="text-align: center; margin-bottom: 2rem;">
+    <h4 class="text-black-50 mb-0">This is the dataset which is used for validation.
+    </h4>
+</div>
+
+
+
+
+<div class="des_data">
+
+    {% block content %}
+
+
+    {{csv | safe}}
+
+    {% endblock %}
+
+
+<div>
+
+    <div style="text-align: center; margin-top: 3rem; ">
+        <a class="btn btn-primary js-scroll-trigger" href="/model_download/{{model}}">Download Your model</a>
+        <p class="text-black-50 mb-0">This downloadable content is in the .pkl format</p>
+        <br>
+        <br>
+    </div>
+    
+    <div class="container box" style="height: 62rem;">
+    
+    
+    
+        <h5 style="text-align: center;
+        height: 5rem;
+        font-size: 19px;
+        margin-bottom: 10px;">The results of your dataset on this model {{model}}</h5>
+    
+        <h3>Confusion Matrix</h3>
+        <p>This confusion matrix is build using your dataset which you have uploaded</p>
+        <table style="width:100%; margin-bottom: 1rem; ">
+            <table align="center" style="text-align:center; border:none; background:transparent;">
+                <tbody>
+                    <tr>
+                        <td style="border:none;" rowspan="2">
+                        </td>
+                        <td style="border:none;">
+                        </td>
+                        <td style="background:#bbeeee;" colspan="2"><b>Predicted condition</b>
+                        </td>
+                        <td style="border:none;">
+                        </td>
+                    <tr>
+    
+                        <td style="background:#eeeeee;font-size:90%;"><a href="/wiki/Statistical_population"
+                                title="Statistical population">Total population</a> <span
+                                style="font-size:118%;white-space:nowrap;">= P + N</span>
+                        </td>
+                        <td style="background:#ccffff;">Predicted condition<br><b>positive</b> (PP)
+                        </td>
+                        <td style="background:#aadddd;">Predicted condition<br><b>negative</b> (PN)
+                        </td>
+                    <tr>
+                        <td rowspan="2" class="nowrap unsortable" style="background:#eeeebb;">
+                            <div
+                                style="-webkit-writing-mode: vertical-rl; -o-writing-mode: vertical-rl; -ms-writing-mode: tb-rl;writing-mode: tb-rl; writing-mode: vertical-rl; layout-flow: vertical-ideographic;display: inline-block; -ms-transform: rotate(180deg); -webkit-transform: rotate(180deg); transform: rotate(180deg);;-ms-transform: none ;padding-left:1px;text-align:center;">
+                                <b>Actual condition</b></div>
+                        </td>
+                        <td style="background:#ffffcc;">Actual condition<br>positive (P)
+                        </td>
+                        <td style="background:#ccffcc;"><b style="color: blue;">{{con_mat[0,0]}} <span
+                                    style="font-size:100%;"></span></b> (TP)
+                        </td>
+                        <td style="background:#f3d2d5;"><b style="color: blue;">{{con_mat[0,1]}} <span
+                                    style="font-size:100%;"></span></b> (FN)
+                        </td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="background:#ddddaa;">Actual condition<br>negative (N)
+                        </td>
+                        <td style="background:#f3d2d5;"><b style="color: blue;">{{con_mat[1,0]}} <span
+                                    style="font-size:100%;"></span></b> (FP)
+                        </td>
+                        <td style="background:#ccffcc;"><b style="color: blue;">{{con_mat[1,1]}} <span
+                                    style="font-size:100%;"></span></b> (TN)
+                        </td>
+    
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 style="padding-top: 3rem;">Results parameters </h3>
+            <p>To know more about these parametes <a href="https://muthu.co/understanding-the-classification-report-in-sklearn/#:~:text=A%20Classification%20report%20is%20used,predictions%20from%20a%20classification%20algorithm.&text=The%20report%20shows%20the%20main,positives%2C%20true%20and%20false%20negatives.">click here</a></p>
+    
+            <table class="table1 table1-primary table1-bordered table1-hover table1-responsive-sm mt-2"
+                style="padding-right: 1rem;">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">{{report[13:25]}}</th>
+                        <th scope="col">{{report[26:34]}}</th>
+                        <th scope="col">{{report[34:45]}}</th>
+                        <th scope="col">{{report[45:56]}}</th>
+                    </tr>
+                </thead>
+    
+    
+                <tbody>    
+                    <tr>
+                        <th scope="row">{{report[57:70]}}</th>
+                        <td>{{report[70:82]}}</td>
+                        <td>{{report[82:92]}}</td>
+                        <td>{{report[92:102]}}</td>
+                        <td>{{report[102:110]}}</td>
+                    </tr>
+                    <tr>     
+                        <th scope="row">{{report[110:127]}}</th>
+                        <td>{{report[127:136]}}</td>
+                        <td>{{report[136:147]}}</td>
+                        <td>{{report[147:157]}}</td>
+                        <td>{{report[157:167]}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">{{report[166:185]}}</th>
+                        <td colspan="2"></td>
+                        <td>{{report[201:213]}}</td>
+                        <td>{{report[213:223]}}</td>
+                    </tr>
+                    <tr>  
+                        <th scope="row">{{report[222:238]}}</th>
+                        <td>{{report[238:248]}}</td>
+                        <td>{{report[248:258]}}</td>
+                        <td>{{report[258:268]}}</td>
+                        <td>{{report[268:276]}}</td>
+                    </tr>
+                    <tr>    
+                        <th scope="row">{{report[276:293]}} </th>
+                        <td>{{report[293:303]}}</td>
+                        <td>{{report[303:313]}}</td>
+                        <td>{{report[313:324]}}</td>
+                        <td>{{report[324:331]}}</td>
+                    </tr>
+                </tbody>
+    
+    
+            </table>
+    
+    
+    
+    
+    
+    
+    </div>
+    
+    
+
+<!-- Contact-->
+<section class="contact-section bg-black">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-3 mb-md-0">
+                <div class="card py-4 h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                        <h4 class="text-uppercase m-0">Address</h4>
+                        <hr class="my-4" />
+                        <div class="small text-black-50">National Institute of Pharmaceutical Education and Research<br>
+                            S.A.S. Nagar, Punjab</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3 mb-md-0">
+                <div class="card py-4 h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-envelope text-primary mb-2"></i>
+                        <h4 class="text-uppercase m-0">Email</h4>
+                        <hr class="my-4" />
+                        <div class="small text-black-50"><a href="#!">negi.animesh5@gmail.com</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3 mb-md-0">
+                <div class="card py-4 h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                        <h4 class="text-uppercase m-0">Phone</h4>
+                        <hr class="my-4" />
+                        <div class="small text-black-50">+91 7018188862</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="social d-flex justify-content-center">
+            <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+            <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+            <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer-->
+
+
+
+<footer class="footer bg-black small text-center text-white-50">
+    <div class="container">Copyright © <i>Insilico</i>models.com 2021</div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Third party plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<!-- Core theme JS-->
+<script src="../static/js/scripts.js"></script>
+</body>
+
+</html>
