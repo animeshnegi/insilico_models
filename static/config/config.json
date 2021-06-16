@@ -1,0 +1,21 @@
+{
+    "param":
+    {
+        "local_server": "true",
+        "local_uri": "mysql+pymysql://root:@localhost/flaask",
+        "fb_link": "https://www.facebook.com/animesh.negi.79/",
+        "tw_link":"https://twitter.com/Animesh___Negi?s=09",
+        "gt_link": "https://github.com/animeshnegi",
+        "User" : "negi.animeh5@gmail.com",
+        "pass" : "-----",
+        "no_of_post" : "5",
+        "ac" : "negi.animesh5@gmail.com",
+        "pas" : "animesh",
+        "address" : "",
+        "Upload_location" : "/var/www/IM/IM/static/uploads",
+        "data_folder" :"/var/www/IM/IM/static/uploads/",
+        "SMILE_LOCATION" : "/var/www/IM/IM/static/descriptor/files/",
+        "Model_folder" : "/var/www/IM/IM/static/downloads/models/"
+    }
+    
+}
