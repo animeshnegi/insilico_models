@@ -1,0 +1,241 @@
+
+
+
+
+
+
+
+
+{% if val == '' %}
+
+{% extends "layout.html" %}
+{% block body %}
+
+<style>
+  .head{
+    width: 100%;
+    height: 5rem;
+    background-color: black;
+
+
+}
+</style>
+
+<div class="head"></div>
+
+  <h1 class="display-4" style="text-align: center; margin-top: 3rem;">Model of Fatty Acid Synthase Receptor</h1>
+
+  <p class="lead container" style="margin-bottom: 10rem; margin-top: 1rem;">This is a simple machine learning model of
+    Randomforest which is trained using the smiles and descriptor of these molecule. It is a
+    binary model which predict weather the given molecule is inhibitor and non - inhibitor.
+  </p>
+  <!-- this the code when the file is not in .csv format  -->
+  {%- if error == 404 -%}
+  <div class="alert alert-danger alert-dismissible fade show" style="margin-left: 5rem; margin-right: 5rem; text-align:center;" role="alert">
+    <strong>ERROR </strong> PLEASE SELECT __.csv__ OR __.tsv__ FILE  
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {% endif %}
+
+
+
+<!-- this the code of empty file code  -->
+{%- if value == 3 -%}
+<div class="alert alert-danger alert-dismissible fade show" style="margin-left: 5rem; margin-right: 5rem; text-align: center;" role="alert">
+  <strong>ERROR </strong> No file was selected 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endif %}
+
+
+
+
+
+
+
+
+<!-- JUMBOTRON FOR MODEL  -->
+
+<div class="container">
+  <div class="jumbotron" style="position: relative; height: 26rem; margin-top: -151px;">
+
+    <h2 class="display-4" >Enter the following details: </h2>
+
+    <form action="/upload/FAS_RF_Model_with%20n_Est%3D100_date%3D2021_06_05---12_11_24_PM.pkl" method="POST" enctype="multipart/form-data">
+      <label for="exampleFormControlFile1" style="color: white;">Upload Test Or Validatiion dataset</label>
+      <input style="height: 2rem; width: 45vmax ; color: white;  background-color: #d49292; " type="file"
+        class="form-control-file" name="fil">
+        <fieldset disabled> 
+          <div class="form-group">
+            <label for="disabledTextInput" style="margin-top: 12px;
+            color: white">Model name for analysis</label>
+            <input type="text" id="disabledTextInput" name="model"  class="form-control" placeholder="FAS_RF_Model_with n_Est=100_date=2021_06_05---12_11_24_PM.pkl">
+        </div></fieldset>
+        <button style="margin-left: 44%;" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}
+
+
+
+{% endif %}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% if val == True %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content=""/>
+        <title>Insilico_Models</title>
+        <link rel="icon" type="image/x-icon" href="../static/img/icon.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{url_for('static', filename = 'css/styles.css')}}" rel="stylesheet" />
+        <style>
+          .head{
+            width: 100%;
+            height: 5rem;
+            background-color: black;
+        
+        
+        }
+        </style>
+</head>
+</body>
+
+
+<div class="head"></div>
+  <!-- this the code when the file is not in .csv format  -->
+  {%- if error == 404 -%}
+  <div class="alert alert-danger alert-dismissible fade show" style="margin-left: 5rem; margin-right: 5rem; text-align:center;" role="alert">
+    <strong>ERROR </strong> PLEASE SELECT __.csv__ OR __.tsv__ FILE  
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {% endif %}
+
+
+
+<!-- this the code of empty file code  -->
+{%- if value == 3 -%}
+<div class="alert alert-danger alert-dismissible fade show" style="margin-left: 5rem; margin-right: 5rem; text-align: center;" role="alert">
+  <strong>ERROR </strong> No file was selected 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endif %}
+
+
+
+<body id="page-top"></body>
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="/index.html">HOME</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/search.html">Models</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+
+
+
+<div class="container">
+  <h5 style="padding-top: 5rem;">Name of the model : {{file}}</h5>
+  <p>You can see the detailes about this model in the name of the model and just click on submit. The results related to the model will be shown 
+    to you in next page.
+  </p>
+    <form action="/upload/{{file}}" method="POST" enctype="multipart/form-data">
+
+      <label for="exampleFormControlFile1" style="color: rgb(0, 0, 0);">Upload Test Or Validatiion dataset</label>
+      <input style="height: 2rem; width: 100% ; color: white;  background-color: #d49292; margin-bottom: 25px; " type="file"
+        class="form-control-file" name="fil">
+        <fieldset disabled> 
+        <div class="form-group">
+          <label for="disabledTextInput">Model name for analysis</label>
+          <input type="text" id="disabledTextInput" name="model"  class="form-control" placeholder="{{file}}">
+      </div></fieldset>
+        <button style="    margin-left: 45%;
+        margin-top: 24px;" type="submit" class="btn btn-primary">Submit</button>
+        
+    </form>
+
+</div>
+
+
+
+
+
+
+
+
+<footer style="position: absolute;bottom: 0; width: 100%;" class="footer bg-black small text-center text-white-50">
+  <div class="container">Copyright © <i>Insilico</i>models.com 2021</div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Third party plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<!-- Core theme JS-->
+<script src="../static/js/scripts.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+{% endif %}
+  
+
+
+
